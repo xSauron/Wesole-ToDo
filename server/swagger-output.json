@@ -1,0 +1,60 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "2.1.0",
+    "title": "TODO API",
+    "description": "Między bogiem a prawdą",
+    "license": {
+      "name": "MIT",
+      "url": "https://spdx.org/licenses/MIT.html"
+    },
+    "contact": {
+      "name": "TODO",
+      "url": "https://github.com/xSauron",
+      "email": ""
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3001/"
+    },
+    {
+      "url": "https://localhost:3001/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "TODO",
+      "description": "."
+    }
+  ],
+  "paths": {
+    "/todo": {
+      "get": {
+        "tags": [
+          "TODO"
+        ],
+        "description": "Zwraca hello world.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  }
+}

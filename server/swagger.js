@@ -1,14 +1,14 @@
 const swaggerAutogen = require('swagger-autogen')({ openapi: "3.0.0", language: 'pl-PL', autoHeaders: false })
 const outputFile     = './swagger-output.json'
 const routesFiles = ['./routes/*']
-
+const dotenv         = require('dotenv').config()
 
 const config = {
-    apiAddress: "localhost:3001",
-    swag_name : "TODO API",
-    swag_desc : "Między bogiem a prawdą",
-    swag_ver  : "2.1.0",
-    schemes   : ['http', 'https']
+    apiAddress: process.env.SWAG_DOMAIN  || "localhost:" + process.env.APP_PORT,
+    swag_name : process.env.SWAG_NAME    || "TODO API",
+    swag_desc : process.env.SWAG_DESC    || "Między bogiem a prawdą",
+    swag_ver  : process.env.SWAG_VERSION || "2.1.0",
+    schemes   : process.env.SWAG_SCHEMES?.split(", ") || ['http', 'https']
 }
 
 const doc = {

@@ -3,7 +3,7 @@
   "info": {
     "version": "2.1.0",
     "title": "TODO API",
-    "description": "Między bogiem a prawdą",
+    "description": "<b>Między Bogiem a prawdą</b>",
     "license": {
       "name": "MIT",
       "url": "https://spdx.org/licenses/MIT.html"
@@ -16,10 +16,10 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3001/"
+      "url": "http://localhost/"
     },
     {
-      "url": "https://localhost:3001/"
+      "url": "https://localhost/"
     }
   ],
   "tags": [
@@ -29,12 +29,12 @@
     }
   ],
   "paths": {
-    "/todo": {
+    "/todo/ping": {
       "get": {
         "tags": [
           "TODO"
         ],
-        "description": "Zwraca hello world.",
+        "description": "Zwraca pong.",
         "parameters": [],
         "responses": {
           "200": {

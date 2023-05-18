@@ -4,8 +4,9 @@
   "description": "Backend or so called API for ToDo.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "start-gendoc": "node -r ./swagger.js"
+    "start": "node -r dotenv/config index.js",
+    "start-gendoc": "node -r ./swagger.js",
+    "dev": "nodemon -r dotenv/config index.js"
   },
   "keywords": [],
   "author": "Sauron",
@@ -13,6 +14,7 @@
   "dependencies": {
     "axios": "^1.4.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "nodemon": "^2.0.22",
     "swagger-autogen": "^2.23.1",

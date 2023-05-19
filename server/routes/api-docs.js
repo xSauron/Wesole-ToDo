@@ -4,11 +4,11 @@ const path = require("path");
 const router = express.Router();
 
 /* SWAGGER - API DOCS */ 
-var swaggerUi   = require("swagger-ui-express")
-var { SwaggerTheme } = require("swagger-themes")
+var swaggerUi   = require("swagger-ui-express");
+var { SwaggerTheme } = require("swagger-themes");
 var swaggerFile = require("../swagger-output.json");
 
-var swag_theme = new SwaggerTheme('v3')
+var swag_theme = new SwaggerTheme('v3');
 var swag_opts  = {
   explorer: false,
   customCss: swag_theme.getBuffer('dark')

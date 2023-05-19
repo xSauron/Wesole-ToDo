@@ -16,29 +16,870 @@
   },
   "servers": [
     {
-      "url": "http://localhost/"
+      "url": "http://localhost:3001/"
     },
     {
-      "url": "https://localhost/"
+      "url": "https://localhost:3001/"
     }
   ],
   "tags": [
     {
       "name": "TODO",
-      "description": "."
+      "description": "Endpoints related to managing TODO items."
     }
   ],
   "paths": {
+    "/swagger-schema": {
+      "get": {
+        "tags": [
+          "UTIL"
+        ],
+        "summary": "Get schema",
+        "description": "Endpoint to retrieve schema.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      }
+    },
     "/todo/ping": {
       "get": {
         "tags": [
           "TODO"
         ],
-        "description": "Zwraca pong.",
+        "summary": "Respond with pong",
+        "description": "Respond with pong.",
         "parameters": [],
         "responses": {
           "200": {
             "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      }
+    },
+    "/todo/": {
+      "get": {
+        "tags": [
+          "TODO"
+        ],
+        "summary": "Get all todos",
+        "description": "Endpoint to retrieve all todos.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    },
+                    "todos": {
+                      "type": "string",
+                      "example": "object"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    },
+                    "todos": {
+                      "type": "string",
+                      "example": "object"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "TODO"
+        ],
+        "summary": "Create a todo",
+        "description": "Endpoint to create a new todo.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    },
+                    "todo": {
+                      "type": "string",
+                      "example": "object"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    },
+                    "todo": {
+                      "type": "string",
+                      "example": "object"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "example": "any"
+                  },
+                  "description": {
+                    "example": "any"
+                  },
+                  "dateTime": {
+                    "example": "any"
+                  },
+                  "localization": {
+                    "example": "any"
+                  },
+                  "color": {
+                    "example": "any"
+                  },
+                  "importance": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/todo/{id}": {
+      "get": {
+        "tags": [
+          "TODO"
+        ],
+        "summary": "Get a todo by ID",
+        "description": "Endpoint to retrieve a todo by its ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID of the todo"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    },
+                    "todo": {
+                      "type": "string",
+                      "example": "object"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    },
+                    "todo": {
+                      "type": "string",
+                      "example": "object"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "example": {
+              "message": "Failed to retrieve todos",
+              "error": {
+                "code": 500,
+                "message": "Internal Server Error"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "TODO"
+        ],
+        "summary": "Update a todo",
+        "description": "Endpoint to update a todo.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID of the todo"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    },
+                    "todo": {
+                      "type": "string",
+                      "example": "object"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    },
+                    "todo": {
+                      "type": "string",
+                      "example": "object"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "TODO"
+        ],
+        "summary": "Delete a todo",
+        "description": "Endpoint to delete a todo.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID of the todo"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    },
+                    "todo": {
+                      "type": "string",
+                      "example": "object"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    },
+                    "todo": {
+                      "type": "string",
+                      "example": "object"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "boolean"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [

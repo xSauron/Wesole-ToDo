@@ -34,7 +34,7 @@ const doc = {
     tags: [
         {
             "name": "TODO",
-            "description": "."
+            "description": "Endpoints related to managing TODO items."
         }
 
     ],

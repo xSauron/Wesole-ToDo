@@ -20,7 +20,7 @@ exports.getAllTodos = (req, res, next) => {
 };
 
 exports.createTodo = (req, res, next) => {
-    const { title, description, dateTime, localization, color, importance } = req.body;
+    const { title, description, dateTime, localization, color, importance, isCompleted } = req.body;
 
     const todoItem = new TodoItem({
         title,
@@ -28,7 +28,8 @@ exports.createTodo = (req, res, next) => {
         dateTime,
         localization,
         color,
-        importance
+        importance,
+        isCompleted
     });
 
     todoItem.save()

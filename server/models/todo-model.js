@@ -22,6 +22,10 @@ const todoSchema = new mongoose.Schema({
     },
     importance: {
         type: String
+    },
+    isCompleted: {
+        type: Boolean,
+        default: false
     }
 });
 

@@ -6,6 +6,9 @@ const cors = require('cors');
 const fs = require("fs");
 const path = require("path");
 
+/* DATABASE */
+const db = require("./services/db.js");
+
 /* INITIATE EXPRESS */
 const app = express();
 
@@ -31,7 +34,6 @@ fs.readdirSync(routesPath).forEach(function(file) {
     app.use('/', route);
 });
 
-
 /* UNKNOWN ROUTE */
 app.all('*', (req, res) => {
     res.status(404).json({
@@ -39,7 +41,6 @@ app.all('*', (req, res) => {
         message: `There is no such endpoint.`
     });
 });
-  
 
 /* LISTEN */
 app.listen(port, () => {

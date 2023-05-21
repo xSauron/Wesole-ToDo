@@ -1,4 +1,3 @@
-const db = require("../services/db.js");
 const TodoItem = require('../models/todo-model.js');
 
 exports.getAllTodos = (req, res, next) => {

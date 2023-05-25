@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getAllTodos, deleteTodo, updateTodo } from '../api.js';
-import { FaClock, FaTrashAlt, FaEdit } from 'react-icons/fa';
+import { FaClock, FaTrashAlt, FaEdit, FaLocationArrow, FaExclamation, FaCheck, FaTimes } from 'react-icons/fa';
 
 function TodoList() {
     const [todos, setTodos] = useState([]);
@@ -43,12 +43,25 @@ function TodoList() {
                                     <FaClock className="inline-block mr-1" />
                                     {todo.dateTime}
                                 </p>
-                                <p className="text-sm text-gray-600">{todo.localization}</p>
                                 <p className="text-sm text-gray-600">
+                                    <FaLocationArrow className="inline-block mr-1" />
+                                    {todo.localization}</p>
+                                <p className="text-sm text-gray-600">
+                                    <FaExclamation className="inline-block mr-1" />
                                     Importance: {todo.importance}
                                 </p>
                                 <p className="text-sm text-gray-600">
-                                    Completed: {todo.isCompleted ? 'Yes' : 'No'}
+                                    {todo.isCompleted ? (
+                                        <span>
+                                            <FaCheck className="inline-block mr-1 text-green-500" />
+                                            Completed
+                                        </span>
+                                    ) : (
+                                        <span>
+                                            <FaTimes className="inline-block mr-1 text-red-500" />
+                                            Incomplete
+                                        </span>
+                                    )}
                                 </p>
                             </div>
                             <button

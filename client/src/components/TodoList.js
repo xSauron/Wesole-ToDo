@@ -26,31 +26,33 @@ function TodoList() {
 
     };
 
+
     return (
-        <div className="container mx-auto">
-            <h1 className="text-2xl font-bold mb-4">TODO List</h1>
+        <div className="container mx-auto dark:bg-gray-800">
+            <h1 className="text-2xl font-bold mb-4 dark:text-gray-300">TODO List</h1>
             {todos.length > 0 ? (
                 <ul className="space-y-4">
                     {todos.map((todo) => (
                         <li
                             key={todo._id}
-                            className={`bg-${todo.color}-100 p-4 rounded shadow flex items-center`}
+                            className={`p-4 rounded shadow flex items-center dark:bg-gray-800 dark:shadow-lg`}
                         >
                             <div className="flex-grow">
                                 <h2 className="text-lg font-bold">{todo.title}</h2>
-                                <p className="text-sm text-gray-600">{todo.description}</p>
-                                <p className="text-sm text-gray-600">
+                                <p className="text-sm text-gray-700 dark:text-gray-400">{todo.description}</p>
+                                <p className="text-sm text-gray-500">
                                     <FaClock className="inline-block mr-1" />
                                     {todo.dateTime}
                                 </p>
-                                <p className="text-sm text-gray-600">
+                                <p className="text-sm text-gray-500">
                                     <FaLocationArrow className="inline-block mr-1" />
-                                    {todo.localization}</p>
-                                <p className="text-sm text-gray-600">
+                                    {todo.localization}
+                                </p>
+                                <p className="text-sm text-gray-500">
                                     <FaExclamation className="inline-block mr-1" />
                                     Importance: {todo.importance}
                                 </p>
-                                <p className="text-sm text-gray-600">
+                                <p className="text-sm text-gray-500">
                                     {todo.isCompleted ? (
                                         <span>
                                             <FaCheck className="inline-block mr-1 text-green-500" />

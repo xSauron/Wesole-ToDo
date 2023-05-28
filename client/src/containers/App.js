@@ -5,8 +5,8 @@ import Footer from '../components/Footer';
 
 function App() {
     return (
-        <div className="dark:bg-gray-900 dark:text-white min-h-[100vh]">
-            <div className="container mx-auto px-4 py-8 min-h-[92vh]">
+        <div className="dark:bg-gray-900 dark:text-white min-h-screen flex flex-col">
+            <div className="container mx-auto px-4 py-8">
                 <h1 className="text-4xl text-gray-900 font-bold mb-4 dark:text-gray-300">
                     TODO App
                 </h1>

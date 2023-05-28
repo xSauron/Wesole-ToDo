@@ -2,6 +2,7 @@ import './App.css';
 import TodoList from '../components/TodoList.js';
 import DarkModeSwitcher from '../components/DarkModeSwitcher';
 import Footer from '../components/Footer';
+import Footer from '../components/Footer';
 
 function App() {
     return (

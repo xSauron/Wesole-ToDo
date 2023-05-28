@@ -2,7 +2,7 @@ import { GoMarkGithub } from 'react-icons/go';
 
 function Footer() {
     return (
-        <footer className="px-4 p-4 bg-white text-center dark:bg-gray-800">
+        <footer className="px-4 p-4 bg-white text-center shadow dark:bg-gray-800">
             <div className="flex justify-center text-sm text-gray-500 sm:text-center dark:text-gray-400">
                 <span>© 2023 Hydem, Sauron, Kontog23</span>
                 <a

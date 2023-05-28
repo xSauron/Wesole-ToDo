@@ -10,7 +10,7 @@ function App() {
                 <h1 className="text-4xl text-gray-900 font-bold mb-4 dark:text-gray-300">
                     TODO App
                 </h1>
-                <div className="bg-white dark:bg-gray-800 rounded pt-6 px-6 shadow">
+                <div className="bg-white dark:bg-gray-800 rounded py-6 px-6 shadow">
                     <div className="flex justify-between">
                         <p className="inline-block text-gray-700 dark:text-gray-300 text-lg mb-4">
                             Welcome to the TODO App!

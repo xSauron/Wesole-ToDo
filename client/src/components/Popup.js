@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import { GrClose } from 'react-icons/gr';
+import { TfiClose } from 'react-icons/tfi';
 
 const Popup = ({ onClose }) => {
     const [selectedOption, setSelectedOption] = useState('low');
@@ -9,11 +9,11 @@ const Popup = ({ onClose }) => {
     };
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center text-black dark:text-white bg-gray-800 bg-opacity-50 dark:bg-gray-900">
-            <div className="bg-white dark:bg-gray-800 w-5/6 h-full sm:w-3/6 sm:h-4/5 md:w-3/6 md:h-4/5 lg:w-2/6 p-4 rounded shadow-md overflow-auto">
+        <div className="fixed inset-0 flex items-center justify-center text-black dark:text-white backdrop-blur">
+            <div className="bg-white dark:bg-gray-800 w-5/6 sm:w-3/6 sm:h-4/5 md:w-3/6 md:h-4/5 lg:w-2/6 p-4 rounded shadow-md overflow-auto">
                 <div className="flex justify-between">
                     <h2 className="text-xl font-bold">Popup Content</h2>
-                    <GrClose className="cursor-pointer text-2xl text-white dark:text-white" onClick={onClose} />
+                    <TfiClose className="cursor-pointer text-2xl text-black dark:text-white" onClick={onClose} />
                 </div>
                 <form>
                     <div className="my-5">

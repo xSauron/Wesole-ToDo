@@ -37,7 +37,6 @@ const UpdateListPopup = ({ closeModal, refreshTodos, todoId, todoTitle, todoDesc
         }
     };
 
-
     const handleUpdateTodo = async (e) => {
         e.preventDefault();
         try {

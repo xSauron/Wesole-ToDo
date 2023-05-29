@@ -245,7 +245,6 @@ const UpdateListPopup = ({
               name="isCompleted"
               id="is_completed_list"
               className="h-6 w-6"
-              checked={todoIsCompleted}
               defaultChecked={todoIsCompleted}
               onChange={handleInputChange}
             />

@@ -9,26 +9,38 @@ import {
     FaCheck,
     FaTimes,
 } from 'react-icons/fa';
+import DeleteModal from './DeleteModal.js';
+
 
 function TodoList() {
     const pathname = window.location.pathname;
     const [todos, setTodos] = useState([]);
+    const [deleteModal, setDeleteModal] = useState({
+        show: false,
+        id: '',
+        title: '',
+    });
+
+    const fetchTodos = async () => {
+        try {
+            const todosData = await getAllTodos();
+            setTodos(todosData);
+        } catch (error) {
+            console.error('Error fetching todos:', error);
+        }
+    };
 
     useEffect(() => {
-        const fetchTodos = async () => {
-            try {
-                const todosData = await getAllTodos();
-                setTodos(todosData);
-            } catch (error) {
-                console.error('Error fetching todos:', error);
-            }
-        };
-
         fetchTodos();
     }, []);
 
-    const handleDelete = async (id) => { };
-
+    const handleDelete = (id, title) => {
+        setDeleteModal({
+            show: true,
+            id: id,
+            title: title,
+        });
+    };
     const handleUpdate = async (id) => { };
 
     const filterToday = () => {
@@ -53,6 +65,10 @@ function TodoList() {
 
     const filterUncompleted = () => {
         return todos.filter((todo) => !todo.isCompleted);
+    };
+
+    const refreshTodos = async () => {
+        await fetchTodos();
     };
 
     return (
@@ -111,7 +127,7 @@ function TodoList() {
                                 </div>
                                 <button
                                     className="bg-red-500 hover:bg-red-600 text-white py-1 px-2 rounded mr-2"
-                                    onClick={() => handleDelete(todo._id)}
+                                    onClick={() => handleDelete(todo._id, todo.title)}
                                 >
                                     <FaTrashAlt className="inline-block mr-1" />
                                     Delete
@@ -130,7 +146,16 @@ function TodoList() {
                     <p>No todos found.</p>
                 )
             }
+            {deleteModal.show && (
+                <DeleteModal
+                    closeModal={() => setDeleteModal({ ...deleteModal, show: false })}
+                    todoId={deleteModal.id}
+                    todoTitle={deleteModal.title}
+                    refreshTodos={refreshTodos}
+                />
+            )}
         </div>
+
     );
 }
 

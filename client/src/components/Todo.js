@@ -4,10 +4,10 @@ import Popup from './Popup.js';
 import TodoList from './TodoList.js';
 
 function Todo() {
-    const [showPopup, setShowPopup] = useState(false);
+    const [showAddPopup, setShowAddPopup] = useState(false);
 
     const togglePopup = () => {
-        setShowPopup(!showPopup);
+        setShowAddPopup(!showAddPopup);
     };
 
     return (
@@ -20,7 +20,7 @@ function Todo() {
                 <AiOutlinePlus className="text-2xl" />
             </button>
             <TodoList />
-            <div>{showPopup && <Popup onClose={togglePopup} />}</div>
+            <div>{showAddPopup && <Popup onClose={togglePopup} />}</div>
         </div>
     );
 }

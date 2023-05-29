@@ -1,14 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { getAllTodos, deleteTodo, updateTodo } from '../api.js';
-import {
-    FaClock,
-    FaTrashAlt,
-    FaEdit,
-    FaLocationArrow,
-    FaExclamation,
-    FaCheck,
-    FaTimes,
-} from 'react-icons/fa';
+import React, { useState } from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
 import Popup from './Popup.js';
 import TodoList from './TodoList.js';

@@ -10,7 +10,7 @@ function Footer() {
           href="https://github.com/xSauron/Wesole-ToDo"
         >
           {' '}
-          <GoMarkGithub className="inline-block text-xl pb-1" />
+          <GoMarkGithub className="inline-block text-xl pb-1 hover:text-white" />
         </a>
       </div>
     </footer>

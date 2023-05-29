@@ -1,5 +1,5 @@
 import './App.css';
-import TodoList from '../components/TodoList.js';
+import Todo from '../components/Todo.js';
 import DarkModeSwitcher from '../components/DarkModeSwitcher';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
@@ -21,7 +21,7 @@ function App() {
                     <p className="text-gray-600 dark:text-gray-400 mb-8">
                         This application was built with React, Tailwind CSS, MangoDB.
                     </p>
-                    <TodoList />
+                    <Todo />
                 </div>
             </div>
             <div className="container mx-auto px-4">

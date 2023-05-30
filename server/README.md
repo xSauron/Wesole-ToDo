@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Getting Started with Express API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Express](https://www.npmjs.com/package/express).
 
 ## Available Scripts
 
